@@ -2,93 +2,211 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Anniversary 💖</title>
+  <title>Happy Monthsary, Pookie! 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(to bottom right, #ffe6e6, #ffcccc);
-      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #fff1f5, #ffe0ec);
+      font-family: 'Playfair Display', serif;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      padding: 50px;
-      color: #333;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    .envelope {
+      width: 300px;
+      height: 200px;
+      background: #fff0f6;
+      border: 2px solid #ffb6c1;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.8s ease;
+      transform-origin: top;
+      overflow: hidden;
+    }
+
+    .envelope:hover {
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+	.envelope.opened {
+	  transform: rotateX(0deg);
+	  height: auto;
+	  width: 90vw;
+	  max-width: 700px;
+	}
+
+
+    .flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: #ffccd5;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2em;
+      color: #cc3366;
+      transition: opacity 0.4s ease;
+    }
+
+    .envelope.opened .flap {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card {
+      background: #ffffffee;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 700px;
+      max-height: 70vh;
+      overflow-y: auto;
+      margin: 0 auto 100px auto;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 1s ease 0.3s;
+    }
+
+    .envelope.opened .card {
+      opacity: 1;
     }
 
     h1 {
-      font-size: 2.5em;
-      color: #cc0066;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      color: #cc3366;
+      margin-bottom: 20px;
     }
 
-    textarea {
-      width: 90%;
-      max-width: 500px;
-      height: 150px;
-      padding: 15px;
-      font-size: 1.2em;
-      border: 2px solid #ff99aa;
-      border-radius: 10px;
-      margin-top: 20px;
-      resize: none;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    p {
+      font-size: 1.4em;
+      color: #444;
+      line-height: 1.6;
     }
 
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 1em;
-      background-color: #ff6699;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+    @media (max-width: 600px) {
+      .card {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2.5em;
+      }
+
+      p {
+        font-size: 1.2em;
+      }
     }
 
-    button:hover {
-      background-color: #ff3366;
+    .floating-img {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      animation: floatUp 6s ease-in infinite;
+      opacity: 0;
+      pointer-events: none;
     }
 
-    .message-display {
-      margin-top: 40px;
-      background: #fff0f5;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-      max-width: 600px;
-      width: 90%;
-      font-size: 1.3em;
-      color: #660033;
-    }
-
-    .hidden {
-      display: none;
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="envelope" id="envelope">
+    <div class="flap">Click to open 💌</div>
+    <div class="card">
+      <h1>Happy Monthsary, My Mahal! 💕</h1>
+      <p>
+        can a cynic will pure love into existence? <br>
+        do wishes such as those come true <br>
+        when you close your eyes <br>
+        and ask the universe for a gift? <br><br>
 
-  <h1>Happy Anniversary 💑</h1>
-  <p>Type your message for your love:</p>
-  
-  <textarea id="messageInput" placeholder="Write something from the heart..."></textarea>
-  <br>
-  <button onclick="showMessage()">Show Message</button>
+        home is a person. <br>
+        it's your eyes and your smile <br>
+        and the way you make me feel safe <br>
+        in a chaotic world full to the brim <br>
+        with heartache and sorrow. <br><br>
 
-  <div id="display" class="message-display hidden"></div>
+        of all the miles you <br>
+        feet could have taken you, <br>
+        they brought you to me. <br><br>
+
+        can two lovers will the life they whispered <br>
+        to each other into existence? <br>
+        every day I vow to be home in a person for you, too. <br><br>
+
+        you make me see the <br>
+        world with new eyes. <br>
+        you make me see myself with an open heart. <br><br>
+
+        <i>- Home Is A Person</i> <br>
+        Page 30, Poems For The Stars<br><br>
+
+        Indeed, you are the home that my heart has been longing for. Happy Monthsary, mahal! You are, and always will be, the greatest thing that ever happened to me. I love uu, pookie!
+      </p>
+    </div>
+  </div>
 
   <script>
-    function showMessage() {
-      const input = document.getElementById('messageInput').value.trim();
-      const display = document.getElementById('display');
-      if (input) {
-        display.textContent = input;
-        display.classList.remove('hidden');
-      } else {
-        display.textContent = "You forgot to write the message!";
-        display.classList.remove('hidden');
-      }
-    }
-  </script>
+    const envelope = document.getElementById('envelope');
+    envelope.addEventListener('click', () => {
+      envelope.classList.add('opened');
+    });
 
+    const images = [
+      'monthsarypic1.jpg',
+      'monthsarypic2.jpg',
+      'monthsarypic3.jpg',
+      'monthsarypic4.jpg',
+      'monthsarypic5.jpg',
+      'monthsarypic6.jpg'
+    ];
+
+    function createFloatingImage() {
+      const img = document.createElement('img');
+      img.src = images[Math.floor(Math.random() * images.length)];
+      img.className = 'floating-img';
+      img.style.left = Math.random() * 100 + 'vw';
+      img.style.animationDuration = (3 + Math.random() * 3) + 's';
+      img.style.width = img.style.height = 40 + Math.random() * 30 + 'px';
+      document.body.appendChild(img);
+
+      setTimeout(() => {
+        img.remove();
+      }, 6000);
+    }
+
+    setInterval(createFloatingImage, 500);
+  </script>
 </body>
 </html>
