@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Monthsary, Pookie! 💖</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
@@ -20,8 +21,8 @@
     }
 
     .envelope {
-      width: 300px;
-      height: 200px;
+      width: 80vw;
+      height: 60vh;
       background: #fff0f6;
       border: 2px solid #ffb6c1;
       border-radius: 10px;
@@ -37,13 +38,12 @@
       box-shadow: 0 15px 30px rgba(0,0,0,0.15);
     }
 
-	.envelope.opened {
-	  transform: rotateX(0deg);
-	  height: auto;
-	  width: 90vw;
-	  max-width: 700px;
-	}
-
+    .envelope.opened {
+      transform: rotateX(0deg);
+      height: auto;
+      width: 90vw;
+      max-width: 700px;
+    }
 
     .flap {
       position: absolute;
@@ -99,7 +99,12 @@
       line-height: 1.6;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
+      .envelope {
+        width: 85vw;
+        height: auto;
+      }
+
       .card {
         padding: 20px;
       }
@@ -110,6 +115,25 @@
 
       p {
         font-size: 1.2em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .envelope {
+        width: 90vw;
+        height: auto;
+      }
+
+      .card {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1em;
       }
     }
 
